@@ -1,0 +1,411 @@
+<style>
+  .wedding-page {
+    font-family: 'Georgia', serif;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    margin-bottom: 60px;
+  }
+
+  .hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+
+  .hero-section p {
+    font-size: 1.2em;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .section {
+    margin-bottom: 80px;
+  }
+
+  .section-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  .section-subtitle {
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #666;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+  }
+
+  /* Tutorial Steps */
+  .tutorial-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .tutorial-step {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+  }
+
+  .tutorial-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  }
+
+  .step-number {
+    font-size: 3em;
+    color: #e0e0e0;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .step-image {
+    width: 100%;
+    height: 200px;
+    background: #f5f5f5;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-style: italic;
+  }
+
+  .tutorial-step h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: #2c3e50;
+  }
+
+  .tutorial-step p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  /* Product Grid */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+
+  .product-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .product-image {
+    width: 100%;
+    height: 350px;
+    background: #f5f5f5;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-style: italic;
+  }
+
+  .product-card h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+  }
+
+  .product-card p {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+
+  .product-price {
+    font-size: 1.2em;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #2c3e50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    font-size: 1em;
+  }
+
+  .btn-primary:hover {
+    background: #1a252f;
+  }
+
+  /* Content Sections */
+  .content-section {
+    padding: 60px 40px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 60px;
+  }
+
+  .content-section h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-weight: 300;
+  }
+
+  .content-section p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .image-placeholder {
+    width: 100%;
+    height: 400px;
+    background: #e9ecef;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .hero-section h1 {
+      font-size: 2em;
+    }
+
+    .section-title {
+      font-size: 1.8em;
+    }
+
+    .two-column {
+      grid-template-columns: 1fr;
+    }
+
+    .tutorial-steps {
+      grid-template-columns: 1fr;
+    }
+
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="wedding-page">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1>Weddings at More & Cope</h1>
+    <p>Celebrate your journey together with timeless crystal pieces and elegant home treasures. From your registry to your first home, we're here to help you curate a collection that will last a lifetime.</p>
+  </div>
+
+  <!-- Tutorial Section -->
+  <div class="section">
+    <h2 class="section-title">How to Add More & Cope to Your Registry</h2>
+    <p class="section-subtitle">Adding our luxury crystal and home goods to your Zola or Amazon registry is simple. Follow these four easy steps to share your favorites with your guests.</p>
+
+    <div class="tutorial-steps">
+      <div class="tutorial-step">
+        <div class="step-number">1</div>
+        <div class="step-image">Step 1 Image Placeholder</div>
+        <h3>Browse Our Collection</h3>
+        <p>Explore our curated selection of crystal pieces, vintage vases, tea sets, and champagne flutes. Each piece is chosen for its timeless elegance and quality craftsmanship.</p>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="step-number">2</div>
+        <div class="step-image">Step 2 Image Placeholder</div>
+        <h3>Copy the Product Link</h3>
+        <p>When you find a piece you love, simply copy the product URL from your browser's address bar. This link will take your guests directly to the item on our website.</p>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="step-number">3</div>
+        <div class="step-image">Step 3 Image Placeholder</div>
+        <h3>Add to Your Registry</h3>
+        <p>Log into your Zola or Amazon registry and use the "Add from Any Store" feature. Paste the More & Cope product link and the item will be added to your registry.</p>
+      </div>
+
+      <div class="tutorial-step">
+        <div class="step-number">4</div>
+        <div class="step-image">Step 4 Image Placeholder</div>
+        <h3>Share with Your Guests</h3>
+        <p>Your guests can now view and purchase your selected More & Cope pieces directly through your registry. They'll enjoy secure checkout and our signature gift packaging.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Wedding Gifts Section -->
+  <div class="section">
+    <h2 class="section-title">Our Top Wedding Gifts of 2025</h2>
+    <p class="section-subtitle">These stunning crystal pieces are our most requested wedding gifts this year. Each one brings lasting beauty and elegance to your home, perfect for celebrating special moments together.</p>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-image">Crystal Champagne Flutes Image</div>
+        <h3>Vintage Crystal Champagne Flutes</h3>
+        <p>Toast to your new life together with these exquisite crystal flutes. Perfect for celebrations and anniversaries to come.</p>
+        <div class="product-price">$145</div>
+        <a href="https://moreandcope.com/products/crystal-champagne-flutes" class="btn-primary">View Details</a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">Crystal Decanter Image</div>
+        <h3>Lead Crystal Decanter</h3>
+        <p>A stunning centerpiece for your bar or dining table. This heirloom-quality decanter showcases fine spirits beautifully.</p>
+        <div class="product-price">$225</div>
+        <a href="https://moreandcope.com/products/crystal-decanter" class="btn-primary">View Details</a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">Crystal Vase Image</div>
+        <h3>Vintage Crystal Vase</h3>
+        <p>Display fresh flowers in timeless style. This crystal vase adds elegance to any room and complements every décor.</p>
+        <div class="product-price">$185</div>
+        <a href="https://moreandcope.com/products/crystal-vase" class="btn-primary">View Details</a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">Tea Set Image</div>
+        <h3>Vintage Fine China Tea Set</h3>
+        <p>Create cherished moments with this elegant tea service. Perfect for hosting intimate gatherings in your new home.</p>
+        <div class="product-price">$295</div>
+        <a href="https://moreandcope.com/products/china-tea-set" class="btn-primary">View Details</a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">Crystal Coupes Image</div>
+        <h3>Crystal Cocktail Coupes Set</h3>
+        <p>Elevate your entertaining with these sophisticated coupes. Ideal for champagne cocktails and special occasions.</p>
+        <div class="product-price">$165</div>
+        <a href="https://moreandcope.com/products/crystal-coupes" class="btn-primary">View Details</a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">Crystal Bowl Image</div>
+        <h3>Cut Crystal Serving Bowl</h3>
+        <p>A versatile piece for your table. This crystal bowl serves salads, fruit, or stands alone as a stunning decorative accent.</p>
+        <div class="product-price">$175</div>
+        <a href="https://moreandcope.com/products/crystal-serving-bowl" class="btn-primary">View Details</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Curate Your First Home Section -->
+  <div class="section">
+    <h2 class="section-title">Curate Your First Home Together</h2>
+
+    <div class="content-section">
+      <div class="two-column">
+        <div>
+          <h2>The Dining Room</h2>
+          <p>Transform your dining space into a place of elegance and connection. Our crystal stemware, vintage china, and cut glass serving pieces bring sophistication to every meal, from intimate dinners to grand celebrations.</p>
+          <p>Consider pairing champagne flutes with a crystal decanter for the perfect bar setup, or mix vintage vases with fine china for a table that tells your unique story.</p>
+        </div>
+        <div class="image-placeholder">Elegant Dining Table Setting Image</div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <div class="two-column">
+        <div class="image-placeholder">Living Room with Crystal Accents Image</div>
+        <div>
+          <h2>The Living Room</h2>
+          <p>Create a welcoming space with crystal vases filled with fresh blooms, decorative bowls that catch the light, and elegant serving pieces displayed on shelves or coffee tables.</p>
+          <p>These timeless pieces become conversation starters and cherished heirlooms, adding character and warmth to your shared space.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <div class="two-column">
+        <div>
+          <h2>The Home Bar</h2>
+          <p>Stock your bar with pieces that make every toast special. Crystal decanters, vintage coupes, and champagne flutes turn everyday moments into celebrations.</p>
+          <p>Whether you're hosting friends or enjoying quiet evenings together, the right glassware elevates the experience and creates lasting memories.</p>
+        </div>
+        <div class="image-placeholder">Styled Home Bar Image</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Art of Wedding Gift Giving -->
+  <div class="section">
+    <h2 class="section-title">The Art of Wedding Gift Giving</h2>
+
+    <div class="content-section">
+      <p>When selecting a wedding gift, consider pieces that will grow more meaningful with time. Crystal and fine china aren't just beautiful objects—they're vessels for memories, companions to celebrations, and treasures that gain significance with each use.</p>
+
+      <p>At More & Cope, we believe the best wedding gifts are those that couple timeless design with exceptional quality. Our collection features pieces that work beautifully together, allowing you to give a single statement piece or create a thoughtfully curated set.</p>
+
+      <h2>Why Choose Crystal & Fine China?</h2>
+      <p>Crystal and fine china have been wedding staples for generations, and for good reason. These pieces:</p>
+      <ul style="font-size: 1.1em; color: #666; line-height: 1.8; margin-bottom: 30px;">
+        <li>Stand the test of time with proper care</li>
+        <li>Elevate everyday moments into special occasions</li>
+        <li>Appreciate in sentimental value over the years</li>
+        <li>Transition seamlessly from formal entertaining to casual gatherings</li>
+        <li>Become family heirlooms passed down through generations</li>
+      </ul>
+
+      <h2>Gifting Tips from Our Experts</h2>
+      <p><strong>Match Their Style:</strong> Consider the couple's taste—do they prefer ornate vintage pieces or clean, minimalist designs? Our collection spans classic cut crystal to sleek modern forms.</p>
+
+      <p><strong>Think Practical Elegance:</strong> The most beloved gifts are those used regularly. Champagne flutes, tea sets, and serving bowls see frequent use while maintaining their special-occasion appeal.</p>
+
+      <p><strong>Consider Sets:</strong> A matching set of four or six pieces makes a complete gift that's ready to use. Crystal coupes, wine glasses, or teacups are perfect for this approach.</p>
+
+      <p><strong>Build Their Collection:</strong> If the couple has registered for specific pieces, consider adding complementary items from the same era or style to help them build a cohesive collection.</p>
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="content-section" style="text-align: center; padding: 80px 40px;">
+    <h2 class="section-title">Start Building Your Registry Today</h2>
+    <p style="font-size: 1.2em; color: #666; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">Browse our complete collection of crystal, china, and vintage treasures. Each piece is carefully selected for quality and timeless beauty.</p>
+    <a href="https://moreandcope.com/collections/all" class="btn-primary" style="font-size: 1.1em; padding: 15px 40px;">Explore Our Collection</a>
+  </div>
+</div>
