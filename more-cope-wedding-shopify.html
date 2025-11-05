@@ -1,0 +1,473 @@
+<style>
+  .wedding-page {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    color: #3e3933;
+    line-height: 1.7;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .wedding-hero {
+    text-align: center;
+    padding: 60px 20px 80px;
+    background: linear-gradient(to bottom, #f9f7f4, #ffffff);
+  }
+
+  .wedding-hero h1 {
+    font-size: 52px;
+    font-weight: 400;
+    margin: 0 0 20px;
+    color: #2c2922;
+    letter-spacing: 1px;
+  }
+
+  .wedding-hero p {
+    font-size: 20px;
+    color: #6b6559;
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: 'Lato', 'Arial', sans-serif;
+  }
+
+  /* Tutorial Section */
+  .tutorial-section {
+    background: #fdfcfb;
+    padding: 80px 40px;
+    margin: 60px 0;
+    border-top: 1px solid #e8e4dd;
+    border-bottom: 1px solid #e8e4dd;
+  }
+
+  .tutorial-section h2 {
+    font-size: 42px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 20px;
+    color: #2c2922;
+  }
+
+  .tutorial-intro {
+    text-align: center;
+    font-size: 18px;
+    color: #6b6559;
+    max-width: 650px;
+    margin: 0 auto 60px;
+    font-family: 'Lato', 'Arial', sans-serif;
+  }
+
+  .tutorial-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .tutorial-step {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(62, 57, 51, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .tutorial-step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(62, 57, 51, 0.12);
+  }
+
+  .step-number {
+    display: inline-block;
+    background: #d4c5b0;
+    color: #2c2922;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: 'Lato', 'Arial', sans-serif;
+  }
+
+  .step-image-placeholder {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, #f4efe8 0%, #e8e4dd 100%);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9b9388;
+    font-size: 14px;
+    font-family: 'Lato', 'Arial', sans-serif;
+    border: 1px solid #e0dcd5;
+  }
+
+  .tutorial-step h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 0 12px;
+    color: #2c2922;
+  }
+
+  .tutorial-step p {
+    font-size: 16px;
+    color: #6b6559;
+    margin: 0;
+    font-family: 'Lato', 'Arial', sans-serif;
+  }
+
+  /* Marketing Sections */
+  .marketing-section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .marketing-section h2 {
+    font-size: 42px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 20px;
+    color: #2c2922;
+  }
+
+  .section-intro {
+    text-align: center;
+    font-size: 18px;
+    color: #6b6559;
+    max-width: 700px;
+    margin: 0 auto 60px;
+    font-family: 'Lato', 'Arial', sans-serif;
+  }
+
+  /* Top Gifts Grid */
+  .gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 50px;
+    margin-top: 50px;
+  }
+
+  .gift-item {
+    text-align: center;
+  }
+
+  .gift-image {
+    width: 100%;
+    height: 380px;
+    background: linear-gradient(135deg, #f9f7f4 0%, #f0ebe3 100%);
+    border-radius: 8px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9b9388;
+    font-size: 16px;
+    font-family: 'Lato', 'Arial', sans-serif;
+    border: 1px solid #e8e4dd;
+    transition: transform 0.3s ease;
+  }
+
+  .gift-item:hover .gift-image {
+    transform: scale(1.02);
+  }
+
+  .gift-item h3 {
+    font-size: 26px;
+    font-weight: 400;
+    margin: 0 0 12px;
+    color: #2c2922;
+  }
+
+  .gift-item p {
+    font-size: 16px;
+    color: #6b6559;
+    margin: 0 0 16px;
+    font-family: 'Lato', 'Arial', sans-serif;
+    line-height: 1.6;
+  }
+
+  .gift-price {
+    font-size: 20px;
+    color: #a08968;
+    font-weight: 500;
+    font-family: 'Lato', 'Arial', sans-serif;
+  }
+
+  /* Content Blocks */
+  .content-block {
+    background: #fdfcfb;
+    padding: 60px 50px;
+    border-radius: 12px;
+    margin: 60px 0;
+    border: 1px solid #e8e4dd;
+  }
+
+  .content-block h3 {
+    font-size: 32px;
+    font-weight: 400;
+    margin: 0 0 20px;
+    color: #2c2922;
+  }
+
+  .content-block p {
+    font-size: 17px;
+    color: #6b6559;
+    margin: 0 0 16px;
+    font-family: 'Lato', 'Arial', sans-serif;
+  }
+
+  .content-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+
+  .content-block li {
+    font-size: 17px;
+    color: #6b6559;
+    margin: 0 0 12px;
+    padding-left: 30px;
+    position: relative;
+    font-family: 'Lato', 'Arial', sans-serif;
+  }
+
+  .content-block li:before {
+    content: "•";
+    position: absolute;
+    left: 10px;
+    color: #d4c5b0;
+    font-size: 20px;
+  }
+
+  /* Call to Action */
+  .cta-section {
+    text-align: center;
+    padding: 80px 40px;
+    background: linear-gradient(to bottom, #f9f7f4, #fdfcfb);
+    margin: 60px 0;
+  }
+
+  .cta-section h2 {
+    font-size: 38px;
+    font-weight: 400;
+    margin: 0 0 24px;
+    color: #2c2922;
+  }
+
+  .cta-section p {
+    font-size: 18px;
+    color: #6b6559;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-family: 'Lato', 'Arial', sans-serif;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 18px 50px;
+    background: #3e3933;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-family: 'Lato', 'Arial', sans-serif;
+    letter-spacing: 0.5px;
+  }
+
+  .cta-button:hover {
+    background: #2c2922;
+    transform: translateY(-2px);
+    color: #ffffff;
+  }
+
+  /* Two Column Layout */
+  .two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin: 40px 0;
+  }
+
+  @media (max-width: 768px) {
+    .wedding-hero h1 {
+      font-size: 38px;
+    }
+
+    .tutorial-steps,
+    .gifts-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .two-column {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .marketing-section,
+    .tutorial-section {
+      padding: 50px 20px;
+    }
+
+    .content-block {
+      padding: 40px 30px;
+    }
+  }
+</style>
+
+<div class="wedding-page">
+
+  <!-- Hero Section -->
+  <div class="wedding-hero">
+    <h1>Celebrate Your Forever</h1>
+    <p>Curate a wedding registry filled with timeless treasures and vintage elegance. Discover crystal, glassware, and luxury pieces that transform a house into your first home together.</p>
+  </div>
+
+  <!-- Tutorial Section -->
+  <div class="tutorial-section">
+    <h2>Add to Your Existing Registry</h2>
+    <p class="tutorial-intro">Already have a registry elsewhere? Our curated vintage pieces integrate seamlessly with any registry platform. Follow these simple steps to add More & Cope treasures to your celebration.</p>
+
+    <div class="tutorial-steps">
+
+      <div class="tutorial-step">
+        <span class="step-number">1</span>
+        <div class="step-image-placeholder">[Image: Browse & Select Products]</div>
+        <h3>Browse & Select</h3>
+        <p>Explore our curated collection of vintage crystal, glassware, and luxury home pieces. From champagne flutes to tea sets, discover items that match your style and vision for your first home.</p>
+      </div>
+
+      <div class="tutorial-step">
+        <span class="step-number">2</span>
+        <div class="step-image-placeholder">[Image: Copy Product URLs]</div>
+        <h3>Copy Product URLs</h3>
+        <p>Once you've found the perfect pieces, simply copy the product URL from your browser. Each item on our site has a unique link that you can share with your registry platform.</p>
+      </div>
+
+      <div class="tutorial-step">
+        <span class="step-number">3</span>
+        <div class="step-image-placeholder">[Image: Add to Registry Platform]</div>
+        <h3>Add to Registry</h3>
+        <p>Visit your existing registry (Amazon, Zola, The Knot, etc.) and use their "Add from any website" feature. Paste the More & Cope product URL, and our items will appear alongside your other selections.</p>
+      </div>
+
+      <div class="tutorial-step">
+        <span class="step-number">4</span>
+        <div class="step-image-placeholder">[Image: Share & Celebrate]</div>
+        <h3>Share & Enjoy</h3>
+        <p>Share your registry with loved ones and watch as your collection of timeless pieces comes together. Each gift becomes part of your story, creating memories for years to come.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Top Wedding Gifts Section -->
+  <div class="marketing-section">
+    <h2>Our Top Wedding Gifts of 2025</h2>
+    <p class="section-intro">These exceptional pieces represent the pinnacle of vintage luxury and timeless design. Each item is carefully selected for its quality, elegance, and ability to become a cherished heirloom.</p>
+
+    <div class="gifts-grid">
+
+      <div class="gift-item">
+        <div class="gift-image">[Crystal Champagne Flutes Image]</div>
+        <h3>Vintage Crystal Champagne Flutes</h3>
+        <p>Toast to your future with these exquisite hand-cut crystal flutes. Each piece captures light beautifully, creating a sparkling moment for every celebration. A timeless addition to your barware collection.</p>
+        <div class="gift-price">$145</div>
+      </div>
+
+      <div class="gift-item">
+        <div class="gift-image">[Vintage Tea Set Image]</div>
+        <h3>Heirloom Porcelain Tea Set</h3>
+        <p>An elegant six-piece vintage tea service featuring delicate gold accents and classic design. Perfect for intimate gatherings and afternoon traditions. This set brings old-world charm to modern entertaining.</p>
+        <div class="gift-price">$128</div>
+      </div>
+
+      <div class="gift-item">
+        <div class="gift-image">[Crystal Vase Image]</div>
+        <h3>European Lead Crystal Vase</h3>
+        <p>A stunning centerpiece that elevates any room. This vintage crystal vase showcases intricate cut patterns and substantial weight, designed to display your favorite blooms with timeless sophistication.</p>
+        <div class="gift-price">$118</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- First Home Section -->
+  <div class="marketing-section">
+    <h2>Curate Your First Home Together</h2>
+    <p class="section-intro">Building a home is about more than furniture and décor—it's about collecting pieces that tell your story and reflect your shared journey.</p>
+
+    <div class="two-column">
+
+      <div class="content-block">
+        <h3>The Foundation Collection</h3>
+        <p>Start with the essentials that will serve you for decades to come. Vintage crystal stemware, classic serving pieces, and elegant tableware form the backbone of gracious entertaining.</p>
+        <p>These aren't just items—they're investments in your future celebrations, from intimate dinners to milestone anniversaries.</p>
+      </div>
+
+      <div class="content-block">
+        <h3>Building Your Legacy</h3>
+        <p>The pieces you choose now become tomorrow's heirlooms. Vintage finds carry history and character that new items simply cannot replicate.</p>
+        <p>Each crystal glass, each porcelain plate, each decorative treasure becomes part of your family's narrative, passed down through generations with the stories of your celebrations.</p>
+      </div>
+
+    </div>
+
+    <div class="content-block" style="margin-top: 60px;">
+      <h3>Rooms That Reflect Your Style</h3>
+      <p>Whether you're drawn to the glamour of Art Deco crystal, the refinement of vintage porcelain, or the warmth of classic glassware, your registry should reflect your unique aesthetic.</p>
+      <ul>
+        <li><strong>Dining Room:</strong> Crystal stemware sets, vintage serving platters, elegant decanters</li>
+        <li><strong>Living Room:</strong> Decorative vases, art glass pieces, sophisticated bar accessories</li>
+        <li><strong>Kitchen:</strong> Vintage canisters, classic tea sets, collectible glassware</li>
+        <li><strong>Bedroom:</strong> Vanity pieces, perfume bottles, elegant decorative accents</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Gift Giving Art Section -->
+  <div class="marketing-section" style="background: #fdfcfb; padding: 80px 40px; border-radius: 12px;">
+    <h2>The Art of Wedding Gift Giving</h2>
+    <p class="section-intro">For guests seeking the perfect gift, vintage crystal and luxury pieces offer timeless appeal and lasting value.</p>
+
+    <div class="content-block">
+      <h3>Why Crystal Pieces Make Perfect Heirloom Gifts</h3>
+      <p>Crystal represents clarity, light, and celebration—making it the ideal material for wedding gifts. Unlike trendy items that date quickly, vintage crystal maintains its elegance and value across decades.</p>
+      <p>Each piece we curate has already stood the test of time, proving its durability and enduring beauty. When you gift vintage crystal, you're offering something truly special: a piece with history that will create new memories.</p>
+    </div>
+
+    <div class="two-column" style="margin-top: 40px;">
+
+      <div class="content-block">
+        <h3>Perfect Pairing Suggestions</h3>
+        <ul>
+          <li><strong>For the Entertainers:</strong> Crystal wine glasses paired with a vintage decanter ($200-$280 combined)</li>
+          <li><strong>For the Traditionalists:</strong> Fine porcelain tea set with matching serving pieces ($150-$220)</li>
+          <li><strong>For the Romantics:</strong> Champagne flutes with a crystal cake server ($180-$240)</li>
+          <li><strong>For the Collectors:</strong> Matching set of crystal vases in varying heights ($250-$350)</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h3>Gift Presentation Matters</h3>
+        <p>Every More & Cope piece arrives beautifully packaged, ready to present to the happy couple. We understand that the unboxing experience is part of the gift.</p>
+        <p>Include a personal note about why you chose this particular vintage piece—perhaps it reminds you of your own wedding, or you envision them using it for years to come.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Final CTA Section -->
+  <div class="cta-section">
+    <h2>Start Building Your Collection</h2>
+    <p>Browse our curated selection of vintage crystal, glassware, and luxury home pieces. Whether you're creating a registry or selecting the perfect gift, discover treasures that transcend trends and celebrate timeless elegance.</p>
+    <a href="/collections/all" class="cta-button">Explore Our Collection</a>
+  </div>
+
+</div>
